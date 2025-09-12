@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Captura de Nombres</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
+        table { margin: auto; border-collapse: collapse; width: 50%; }
+        th, td { border: 1px solid black; padding: 8px; text-align: center; }
+        th { background-color: #f2f2f2; }
+        input, button { padding: 8px; margin: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Captura de Nombres</h1>
+
+    <!-- Formulario para agregar un nombre -->
+    <form action="/agregar" method="post">
+        <input type="text" name="nombre" placeholder="Escribe un nombre" required>
+        <button type="submit">Agregar</button>
+    </form>
+
+    <h2>Lista de Nombres</h2>
+    <table>
+        <tr><th>#</th><th>Nombre</th></tr>
+        {% for nombre in nombres %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ nombre }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <!-- Botón para atender (eliminar el primero de la lista) -->
+    <form action="/atender" method="get">
+        <button type="submit">Atender</button>
+    </form>
+</body>
+</html>
+
