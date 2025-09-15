@@ -1,6 +1,6 @@
 import numpy as np
 
-# 1. CREAR ARREGLOS
+# 1. CREAR ARREGLOS--
 arreglo1 = np.array([2, 4, 6, 8, 10])
 arreglo2 = np.ones((4, 4))      # Matriz 4x4 de unos
 arreglo3 = np.zeros((2, 2, 2))  # Arreglo 3D de ceros
